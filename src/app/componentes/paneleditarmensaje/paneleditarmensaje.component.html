@@ -1,0 +1,37 @@
+<div *ngIf="mensaje != null" class="caja-mensaje">
+    <div class="datos-autor">
+        <div class="apodo">
+            <a *ngIf="mensaje.autor != null" [routerLink]="['/perfil', mensaje.autor.id]" routerLinkActive="active">{{mensaje.autor.apodo}}</a>
+        </div>
+    </div>
+    <div class="datos-contenido">
+        <div class="fecha-publicacion">
+            {{ mensaje.fechaPublicacion | mostrarAntiguedad:"dd/MM/yy" }}
+        </div>
+        <div class="contenido" *ngIf="!editar">
+            {{ mensaje.contenido }}
+        </div>
+        <div *ngIf="!editar && editable">
+          <button class="btn btn-secondary" type="button" (click)="hacerEditable()">Editar</button>
+          <button class="btn btn-danger" type="button" *ngIf="borrable" (click)="borrarMensaje()">Borrar</button>
+        </div>
+      </div>
+</div>
+<div id="caja-editar-mensaje" *ngIf="editable == true && editar == true">
+    <div id="panel-mensaje-nuevo">
+        <form (ngSubmit)="actualizarMensaje()" [formGroup]="mensajeForm">
+            <div class="form-group">
+                <label for="contenido">Contenido:</label>
+                <textarea type="text" id="contenido" class="form-control" name="contenido" [value]="mensaje.contenido"
+                    placeholder="Escribe un mensaje..." aria-describedby="ayudaContenido" formControlName="contenido"
+                    minlength="5" required>
+              </textarea>
+                <small id="ayudaContenido" class="form-text text-muted">Introduce un mensaje con una longitud mínima de
+                    10 caracteres.</small>
+            </div>
+            <button type="submit" id="actualizar" name="actualizar" class="btn btn-primary"
+                [disabled]="mensajeForm.invalid">Actualizar</button>
+        </form>
+    </div>
+</div>
+<hr>

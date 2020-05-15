@@ -1,0 +1,26 @@
+<div id="caja-bitacora">
+  <h2 id="titulo-bitacora">{{bitacora?.nombre}}</h2>
+
+<hr>
+
+<app-panelmensajenuevo [idBitacora]="idBitacora" *ngIf="estaConectado()"></app-panelmensajenuevo>
+
+<h3>Mensajes</h3>
+
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text contorno-cielo-oscuro" for="usuario">Usuario</label>
+    </div>
+    <select class="custom-select col-3 contorno-cielo-claro" id="usuario" [(ngModel)]="idUsuario" >
+      <option selected value="" >Todos los usuarios</option>
+      <option *ngFor="let usuario of listaUsuarios" value="{{usuario.id}}">{{usuario.apodo}}</option>
+    </select>
+    <div class="input-group-append">
+      <button id="boton-cambiar" class="btn btn-outline-secondary contorno-cielo-oscuro" type="button" (click)="filtrar()">Cambiar</button>
+    </div>
+  </div>
+
+<div *ngFor="let mensaje of listaMensajes">
+          <app-paneleditarmensaje [mensaje]="mensaje" [idBitacora]="idBitacora"></app-paneleditarmensaje>
+</div>
+</div>

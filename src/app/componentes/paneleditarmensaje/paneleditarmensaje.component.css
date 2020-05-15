@@ -1,0 +1,13 @@
+.contenido{
+    background-color: white;
+    border: 1px dashed #009fff;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.caja-mensaje{
+ border: 1px solid #79baff;
+padding: 4px;
+border-radius: 6px;
+background-color: rgba(53, 217, 255, 0.2);
+}

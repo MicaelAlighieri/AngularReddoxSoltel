@@ -1,0 +1,26 @@
+<nav id="navegacion" class="navbar navbar-expand-lg navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="enlace-nav nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" *ngIf="!estaConectado() ">
+          <a class="enlace-nav nav-link" href="login">Iniciar sesión</a>
+        </li>
+        <li class="nav-item" *ngIf="!estaConectado() ">
+            <a class="enlace-nav nav-link" href="registro">Registrarse</a>
+          </li>
+        <li class="nav-item">
+          <a class="enlace-nav nav-link" href="b">Bitácoras</a>
+        </li>
+        <li class="nav-item" *ngIf="estaConectado() ">
+            <a class="enlace-nav btn nav-link" (click)="cerrarSesion()">Cerrar sesión</a>
+         </li>
+      </ul>
+    </div>
+  </nav>
+
+  <hr>

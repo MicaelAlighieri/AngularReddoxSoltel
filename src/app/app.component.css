@@ -1,0 +1,22 @@
+#contenedor-principal{
+    background-color: white;
+    background-image: url("../assets/fondo-caja-principal.jpg");
+    background-size: cover;
+    border: 2px dashed rgb(0, 135, 255);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#pie{
+    background-color: rgba(106, 199, 255, 0.8);
+    border-radius: 4px;
+    border: 1px dashed rgb(64, 122, 157);
+    padding: 20px;
+}
+
+#titulo-logo{
+    color: white;
+text-shadow: -1px -1px 0 #024fb3, 1px -1px 0 #024fb3, -1px 1px 0 #024fb3, 1px 1px 0 #024fb3;
+font-weight: bold;
+text-decoration:none;
+}
