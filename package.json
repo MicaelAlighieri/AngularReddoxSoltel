@@ -24,7 +24,7 @@
     "jquery": "^3.5.1",
     "jw-angular-pagination": "^1.1.0",
     "jw-paginate": "^1.0.4",
-    "moment": "^2.25.3",
+    "moment": "^2.29.4",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
